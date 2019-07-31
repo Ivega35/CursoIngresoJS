@@ -1,14 +1,16 @@
 function mostrar()
 {
 
-	var contador=0;
+	var contador;
 	var acumulador=0;
 	var dato;
 
-	while(contador<5){
+	for(contador=0;contador<5;contador++){
+		do{
 		dato=parseInt(prompt("ingrese un numero: "))
+		}while(isNaN(dato))//isNaN es para asegurar que es un numero
+
 		acumulador= acumulador + dato
-		contador++
 	}
 
 

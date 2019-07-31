@@ -1,9 +1,8 @@
 function mostrar()
-{	var i=10;
+{	var i;
 	
-		while(i>0){
+		for(i=10;i>0;i--){
 		alert(i);
-		i--
 		} 
 
 }//FIN DE LA FUNCIÓN
