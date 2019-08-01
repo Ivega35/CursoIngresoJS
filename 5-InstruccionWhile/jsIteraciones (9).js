@@ -1,6 +1,4 @@
 function mostrar() {
-
-	var contador = 0;
 	var maximo = 0;
 	var minimo = 0;
 	var numero;
