@@ -4,34 +4,34 @@ function mostrar() {
     var contador;
     var acumulador = 0
     var promedio;
-    var flag = true
+    var flag = 0
     var baja;
     var desaprobados = 0;
     var sexobaja
 
-    for(contador=1; contador<=5 ; contador++){
-
-        do{
-            nota = parseInt(prompt("Ingrese la nota del alumno " + contador))
-            acumulador = acumulador + nota
-        }while (isNaN(nota))
-
-
-        do{
-            sexo = prompt("Ingrese el sexo del alumno " + contador)
-        }while (sexo=='m')
-
-        if (flag = true){
-            baja = nota
-            flag = false
+    for (contador = 1; contador <= 5; contador++) {
+        nota = parseInt(prompt("Ingrese la nota del alumno " + contador))
+        while (isNaN(nota) || nota > 10 || nota < 1) {
+            nota = prompt("nota no valida, vuelva a ingresar nota de alumno " + contador + ":")
         }
-        if(nota < baja){
-            baja = nota
-            sexobaja = sexo
+        sexo = prompt("Ingrese el sexo del alumno " + contador)
+        while (sexo != "f" && sexo != "m") {
+            sexo = prompt("sexo no valido, vuelva a ingresar sexo de alumno " + contador + ":")
         }
-        if(nota >= 6 && sexo == 'm'){
-          desaprobados++
+
+
+        if (flag == 0) {
+            baja = nota;
+            flag = 1;
         }
+        if (nota < baja) {
+            baja = nota;
+            sexobaja = sexo;
+        }
+        if (nota >= 6 && sexo == 'm') {
+            desaprobados++;
+        }
+        acumulador = acumulador + nota;
     }
     promedio = acumulador / 5;
     alert("el promedio de las notas es " + promedio);

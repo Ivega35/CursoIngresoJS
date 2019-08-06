@@ -9,7 +9,7 @@ function mostrar() {
 	do {
 		numero = parseInt(prompt("ingrese un numero:"))
 	} while (isNaN(numero))
-	if (flag = true) {
+	if (flag == true) {
 		flag = false
 		maximo = numero
 		minimo = numero
